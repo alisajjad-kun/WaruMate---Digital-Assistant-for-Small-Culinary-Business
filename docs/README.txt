@@ -2,23 +2,23 @@
 WaruMate — Digital Assistant for Small Culinary Businesses
 ============================================================
 
-📦 Deskripsi Singkat:
+Deskripsi Singkat:
 Aplikasi manajemen warung makan sederhana berbasis Python dan CustomTkinter.
 Dirancang untuk membantu UMKM kuliner dalam mengelola menu, transaksi,
 dan analitik penjualan dengan antarmuka modern dan mudah digunakan.
 
 ------------------------------------------------------------
-💡 Fitur Utama:
+Fitur Utama:
 ------------------------------------------------------------
-1️. Kelola Menu
+1. Kelola Menu
    - Tambah, lihat, dan hapus menu makanan
    - Menyimpan data ke database SQLite
 
-2️. Transaksi Penjualan
+2. Transaksi Penjualan
    - Pilih menu, tentukan jumlah, metode pembayaran (Cash/Non-Cash)
    - Otomatis mengurangi stok dan menyimpan riwayat transaksi
 
-3️. Dashboard Analitik
+3. Dashboard Analitik
    - Grafik pendapatan harian (bar chart)
    - Proporsi metode pembayaran (pie chart)
    - Menu terlaris (bar chart)
@@ -57,7 +57,7 @@ WaruMate_Project_v1_to_v5_Final/
     └── Screenshot_Dashboard.png
 
 ------------------------------------------------------------
-👨‍Tim Pengembang:
+‍Tim Pengembang:
 ------------------------------------------------------------
 Kelompok 1 B1 — Pemrograman Komputer
 Anggota:
@@ -68,7 +68,7 @@ Anggota:
 5. Melyka Joseveen Widjaja	      25/559718/SV/26330
 
 ------------------------------------------------------------
-📅 Versi:
+Versi:
 v5.0 (Final Stable Build)
 ------------------------------------------------------------
 
