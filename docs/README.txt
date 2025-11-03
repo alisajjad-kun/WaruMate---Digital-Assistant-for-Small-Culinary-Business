@@ -61,11 +61,11 @@ WaruMate_Project_v1_to_v5_Final/
 ------------------------------------------------------------
 Kelompok 1 B1 — Pemrograman Komputer
 Anggota:
-1. Ali Sajjad Makarim		25/566079/SV/27031
-2. Aliya Shafa Zahira		25/556224/SV/25901
+1. Ali Sajjad Makarim		      25/566079/SV/27031
+2. Aliya Shafa Zahira		      25/556224/SV/25901
 3. Bintang Pradana Sugihantoro	25/567505/SV/27183
-4. Faris Abyan Shalahuddin	25/566914/SV/27126
-5. Melyka Joseveen Widjaja	25/559718/SV/26330
+4. Faris Abyan Shalahuddin	      25/566914/SV/27126
+5. Melyka Joseveen Widjaja	      25/559718/SV/26330
 
 ------------------------------------------------------------
 📅 Versi:
