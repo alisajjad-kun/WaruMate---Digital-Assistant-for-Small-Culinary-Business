@@ -1,0 +1,103 @@
+============================================================
+WARUMATE v5 – LOGIKA DAN FLOW PROGRAM
+============================================================
+
+1. Inisialisasi Program
+   - Import library:
+       • customtkinter (GUI modern)
+       • sqlite3 (database)
+       • matplotlib (analitik)
+       • datetime (tanggal transaksi)
+   - Inisialisasi objek DatabaseHandler() → membuat tabel menu, transaksi, detail_transaksi.
+   - Inisialisasi GUI utama melalui class WaruMateApp.
+   - Tampilan awal otomatis menampilkan halaman "Kelola Menu".
+
+2. Struktur Antarmuka (Layout)
+   - Sidebar kiri:
+       Warna biru elegan, berisi 3 tombol:
+       [Kelola Menu] [Transaksi] [Dashboard]
+   - Area kanan:
+       Tempat berganti halaman aktif.
+   - Desain flat modern dengan warna putih bersih dan bayangan lembut.
+
+3. Halaman Kelola Menu
+   - Komponen:
+       Form input: Nama, Harga, Stok, Kategori.
+       Tombol [Tambah Menu].
+       Tabel daftar menu (Treeview).
+   - Alur kerja:
+       a) Pengguna mengisi form.
+       b) Klik [Tambah Menu].
+       c) Sistem validasi → jika kosong, tampilkan pesan error.
+       d) Jika valid → data disimpan ke database (tabel menu).
+       e) Tabel daftar menu otomatis diperbarui.
+
+4. Halaman Transaksi Penjualan
+   - Komponen:
+       • Daftar menu (ID, Nama, Harga, Stok)
+       • Input jumlah pembelian
+       • Pilihan metode pembayaran (Cash / Non-Cash)
+       • Tombol [Bayar Sekarang]
+   - Alur kerja:
+       a) Pengguna memilih menu dari tabel.
+       b) Mengisi jumlah pembelian.
+       c) Memilih metode pembayaran.
+       d) Sistem menghitung subtotal = harga × jumlah.
+       e) Simpan transaksi ke:
+          - tabel transaksi (tanggal, total, metode)
+          - tabel detail_transaksi (id_menu, jumlah, subtotal)
+       f) Stok menu otomatis dikurangi.
+       g) Pesan konfirmasi sukses ditampilkan.
+
+5. Halaman Dashboard Analitik
+   - Komponen:
+       3 grafik utama menggunakan matplotlib:
+       a) Grafik pendapatan harian (Bar Chart)
+       b) Grafik metode pembayaran (Pie Chart)
+       c) Grafik menu terlaris (Bar Chart)
+   - Alur kerja:
+       a) Sistem membaca data transaksi dari database.
+       b) Query:
+            SELECT SUM(total) per tanggal;
+            SELECT metode, COUNT(*) per metode;
+            SELECT id_menu, SUM(jumlah) per menu.
+       c) Hasil query ditampilkan dalam grafik interaktif.
+       d) Dashboard memberikan gambaran cepat performa usaha harian.
+
+6. Struktur Data
+   - List/Dict:
+       [{"id_menu":1,"jumlah":2,"subtotal":30000}]
+   - Tuple hasil query SQLite:
+       (1, "Nasi Goreng", 15000.0, 20, "Makanan")
+   - Database warung.db terdiri dari:
+       - menu(id, nama, harga, stok, kategori)
+       - transaksi(id, tanggal, total, metode)
+       - detail_transaksi(id, id_transaksi, id_menu, jumlah, subtotal)
+
+7. Konsep Pemrograman
+   - Berbasis OOP:
+       Class DatabaseHandler dan WaruMateApp.
+   - Modular:
+       Setiap halaman (menu, transaksi, dashboard) dibuat dengan fungsi terpisah.
+   - Event-driven:
+       Setiap tombol → callback function yang memproses data.
+   - GUI modern dengan CustomTkinter.
+   - Analitik visual dengan Matplotlib.
+
+8. Alur Program
+   Mulai →
+   Inisialisasi database dan GUI →
+   Tampilkan "Kelola Menu" →
+   Input dan simpan menu →
+   Navigasi ke "Transaksi" →
+   Pilih menu → isi jumlah → pilih metode → simpan transaksi →
+   Stok berkurang otomatis →
+   Navigasi ke "Dashboard" →
+   Tampilkan grafik pendapatan, metode, menu terlaris →
+   Selesai.
+
+============================================================
+Menggabungkan semua fitur dari v4 dan v5:
+CRUD menu, transaksi dengan metode pembayaran,
+stok dinamis, dan dashboard analitik visual yang modern.
+============================================================

@@ -1,0 +1,79 @@
+============================================================
+WARUMATE v4 – LOGIKA DAN FLOW PROGRAM (CUSTOMTKINTER)
+============================================================
+
+1. Inisialisasi Program
+   - Import library customtkinter, sqlite3, datetime.
+   - Buat objek DatabaseHandler() → otomatis membuat tabel:
+     menu, transaksi, dan detail_transaksi.
+   - Inisialisasi GUI utama menggunakan class WaruMateApp.
+
+2. Tampilan Utama (Layout dan Navigasi)
+   - Membuat jendela utama (1200x720 pixel).
+   - Sidebar di sisi kiri berwarna biru dengan 3 tombol navigasi:
+       [Kelola Menu] [Transaksi] [Laporan]
+   - Area kanan digunakan untuk menampilkan konten halaman aktif.
+
+3. Halaman Kelola Menu
+   - Form input: Nama Menu, Harga, Stok, Kategori.
+   - Tombol [Tambah Menu]:
+       -> Validasi input.
+       -> Simpan ke database (tabel menu).
+       -> Refresh daftar menu di tabel Treeview.
+   - Tabel menampilkan semua data menu yang ada di database.
+
+4. Halaman Transaksi
+   - Menampilkan daftar menu (ID, Nama, Harga, Stok).
+   - Pengguna memilih menu yang akan dibeli.
+   - Input jumlah pembelian dan pilih metode pembayaran:
+       (Cash / Non-Cash)
+   - Tombol [Bayar]:
+       -> Validasi stok & jumlah.
+       -> Hitung subtotal (harga x jumlah).
+       -> Simpan transaksi ke tabel:
+          - transaksi (tanggal, total, metode)
+          - detail_transaksi (id_transaksi, id_menu, jumlah, subtotal)
+       -> Kurangi stok otomatis pada tabel menu.
+       -> Tampilkan notifikasi sukses.
+
+5. Halaman Laporan
+   - Menampilkan dua bagian laporan:
+     a) Laporan Per Kategori:
+        Query: SELECT kategori, COUNT(*) FROM menu GROUP BY kategori
+     b) Laporan Harian:
+        Query: SELECT * FROM transaksi WHERE DATE(tanggal)=hari_ini
+   - Jika tidak ada data, tampilkan pesan:
+     "Belum ada transaksi hari ini."
+
+6. Struktur Data
+   - List/Dict untuk menyimpan transaksi sementara:
+       [{"id_menu":1,"jumlah":2,"subtotal":30000}]
+   - Tuple hasil query database SQLite:
+       (1, "Nasi Goreng", 15000.0, 20, "Makanan")
+   - Database SQLite (file warung.db) menyimpan data permanen.
+
+7. Konsep Pemrograman
+   - OOP: class DatabaseHandler dan WaruMateApp.
+   - GUI Modular: setiap halaman menggunakan frame terpisah.
+   - Event-driven: setiap tombol memiliki callback function.
+   - Modularitas: logika dan tampilan dipisah antar file.
+   - Persistensi data menggunakan SQLite.
+
+8. Alur Program
+   Mulai →
+   Buka aplikasi GUI →
+   Tampilkan "Kelola Menu" →
+   Input menu baru → Simpan ke DB →
+   Pindah ke "Transaksi" →
+   Pilih menu → Masukkan jumlah → Pilih pembayaran →
+   Simpan transaksi → Kurangi stok →
+   Pindah ke "Laporan" →
+   Tampilkan laporan kategori & harian →
+   Selesai.
+
+============================================================
+CATATAN:
+Versi 4 merupakan fase GUI stabil WaruMate dengan fitur penuh:
+CRUD Menu, Transaksi dengan metode pembayaran, serta laporan harian.
+Menjadi dasar bagi pengembangan WaruMate v5 (analitik & grafik).
+============================================================

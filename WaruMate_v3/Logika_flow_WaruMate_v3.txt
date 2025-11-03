@@ -1,0 +1,59 @@
+============================================================
+WARUMATE v3 – LOGIKA & FLOW DATA
+============================================================
+
+1. Program dimulai dan membuat objek DatabaseHandler yang terhubung ke file SQLite 'warung.db'.
+2. Jika tabel belum ada, program otomatis membuat:
+   - menu (id_menu, nama_menu, harga, stok, kategori)
+   - transaksi (id_transaksi, tanggal, total)
+   - detail_transaksi (id_detail, id_transaksi, id_menu, jumlah, subtotal)
+3. Pengguna melihat menu utama dan memilih fitur:
+   - Tambah Menu
+   - Lihat Semua Menu
+   - Cari Menu (berdasarkan kata kunci nama)
+   - Filter Menu (berdasarkan kategori)
+   - Transaksi Pembelian (sederhana)
+   - Laporan: Penjualan per Kategori
+   - Keluar
+4. Jika memilih 'Tambah Menu':
+   - Program meminta nama, harga, stok, dan kategori.
+   - Data dikirim ke DatabaseHandler.tambah_menu() dan disimpan secara permanen.
+5. Jika memilih 'Lihat Semua Menu':
+   - Program mengambil semua baris dari tabel menu dan menampilkannya.
+6. Jika memilih 'Cari Menu':
+   - Program meminta kata kunci dan menjalankan query LIKE untuk menampilkan menu yang cocok.
+7. Jika memilih 'Filter Menu':
+   - Program meminta nama kategori dan menampilkan semua menu di kategori tersebut.
+8. Jika memilih 'Transaksi Pembelian':
+   - Program menampilkan daftar menu beserta stok.
+   - Pengguna memasukkan ID menu dan jumlah yang ingin dibeli (ulang sampai mengetik 'selesai').
+   - Untuk tiap item, sistem memeriksa stok; jika stok mencukupi, item ditambahkan ke keranjang internal.
+   - Setelah selesai, program memanggil DatabaseHandler.simpan_transaksi(items) untuk:
+       a) menyimpan baris transaksi di tabel transaksi,
+       b) menyimpan tiap item di tabel detail_transaksi,
+       c) mengurangi stok tiap menu yang terjual.
+   - Jika pada saat penyimpanan ditemukan stok tidak cukup, transaksi dibatalkan.
+9. Jika memilih 'Laporan: Penjualan per Kategori':
+   - Program menjalankan query agregasi JOIN antara detail_transaksi, transaksi, dan menu untuk menghitung:
+       - jumlah unit terjual per kategori
+       - total omzet per kategori
+   - Hasil ditampilkan dalam format: kategori, jumlah terjual, total omzet.
+10. Jika memilih 'Keluar':
+    - Program berhenti; koneksi database ditutup otomatis saat objek DatabaseHandler dihapus.
+
+------------------------------------------------------------
+STRUKTUR DATA (singkat)
+------------------------------------------------------------
+- menu: id_menu, nama_menu, harga, stok, kategori
+- transaksi: id_transaksi, tanggal, total
+- detail_transaksi: id_detail, id_transaksi, id_menu, jumlah, subtotal
+
+------------------------------------------------------------
+KONSEP PEMROGRAMAN
+------------------------------------------------------------
+- Menggunakan OOP untuk pembungkus database (DatabaseHandler).
+- Menggunakan SQLite untuk penyimpanan permanen.
+- Menggunakan query SQL (JOIN & GROUP BY) untuk laporan.
+- Menjaga operasi transaksi sederhana agar stok ter-update konsisten.
+
+

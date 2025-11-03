@@ -1,0 +1,49 @@
+============================================================
+WARUMATE v2 – LOGIKA & FLOW DATA
+============================================================
+
+1. Program dimulai.
+2. Objek `DatabaseHandler` dibuat dan otomatis menghubungkan ke database SQLite (warung.db).
+3. Jika file database belum ada, program membuat tabel:
+   - menu (id_menu, nama_menu, harga, kategori)
+4. Pengguna ditampilkan menu utama:
+   - Tambah Menu
+   - Lihat Semua Menu
+   - Ubah Menu
+   - Hapus Menu
+   - Keluar
+5. Jika memilih 'Tambah Menu':
+   - Pengguna memasukkan data menu.
+   - Data dikirim ke fungsi `tambah_menu()` di class DatabaseHandler.
+   - Data disimpan secara permanen ke dalam tabel `menu`.
+6. Jika memilih 'Lihat Menu':
+   - Program menjalankan fungsi `tampilkan_semua_menu()`.
+   - Data diambil dari tabel `menu` dan ditampilkan di terminal.
+7. Jika memilih 'Ubah Menu':
+   - Pengguna memilih ID menu.
+   - Program menjalankan fungsi `ubah_menu()` dengan data baru.
+   - Database diperbarui.
+8. Jika memilih 'Hapus Menu':
+   - Pengguna memilih ID menu.
+   - Program menjalankan fungsi `hapus_menu()` untuk menghapus data dari database.
+9. Jika memilih 'Keluar':
+   - Koneksi database ditutup dan program berhenti.
+
+------------------------------------------------------------
+STRUKTUR DATA
+------------------------------------------------------------
+- Database: SQLite
+- Tabel: menu
+  Kolom:
+  - id_menu (INTEGER PRIMARY KEY)
+  - nama_menu (TEXT)
+  - harga (REAL)
+  - kategori (TEXT)
+
+------------------------------------------------------------
+KONSEP PEMROGRAMAN
+------------------------------------------------------------
+- Menggunakan OOP dengan class DatabaseHandler.
+- Menggunakan method (fungsi di dalam class) untuk CRUD data.
+- Data bersifat permanen, tersimpan dalam file warung.db.
+- Pemrograman modular: logika dan database dipisah ke file berbeda.

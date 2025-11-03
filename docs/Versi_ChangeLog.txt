@@ -1,0 +1,36 @@
+============================================================
+WaruMate Project - Version History Summary
+============================================================
+
+Versi 1.0
+----------
+- Console version (tanpa database)
+- CRUD menu sederhana (list & dict)
+- Pengenalan konsep OOP
+
+Versi 2.0
+----------
+- Penambahan database SQLite
+- Pemisahan logic backend (DatabaseHandler)
+- Penyimpanan data permanen
+
+Versi 3.0
+----------
+- Optimasi CLI
+- Tambahan laporan penjualan harian
+- Validasi input user
+
+Versi 4.0
+----------
+- Migrasi ke GUI (CustomTkinter)
+- Fitur transaksi Cash/Non-Cash
+- Stok otomatis berkurang
+- Laporan penjualan harian
+
+Versi 5.0
+----------
+- Penambahan Dashboard Analitik (Matplotlib)
+- Grafik pendapatan, metode pembayaran, menu terlaris
+- DatabaseHandler ditingkatkan dengan `ambil_data_dashboard()`
+- GUI lebih modern dan responsif
+============================================================

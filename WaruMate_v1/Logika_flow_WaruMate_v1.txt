@@ -1,0 +1,41 @@
+============================================================
+WARUMATE v1 – LOGIKA & FLOW DATA
+============================================================
+
+1. Program dimulai.
+2. List kosong bernama `menu_list` dibuat untuk menampung semua data menu.
+3. Pengguna ditampilkan menu utama:
+   - Tambah Menu
+   - Lihat Menu
+   - Transaksi Pembelian
+   - Keluar
+4. Jika memilih 'Tambah Menu':
+   - Pengguna menginput nama, harga, dan kategori menu.
+   - Data disimpan dalam bentuk dictionary:
+       {"nama": ..., "harga": ..., "kategori": ...}
+   - Dictionary tersebut ditambahkan ke list `menu_list`.
+5. Jika memilih 'Lihat Menu':
+   - Program menampilkan seluruh isi list `menu_list`.
+   - Jika kosong, tampilkan pesan “Belum ada menu yang tersedia.”
+6. Jika memilih 'Transaksi Pembelian':
+   - Program menampilkan daftar menu.
+   - Pengguna memilih menu berdasarkan nomor.
+   - Pengguna menginput jumlah pembelian.
+   - Program menghitung subtotal dan menambahkan ke total belanja.
+   - Ulangi sampai pengguna mengetik 'selesai'.
+7. Setelah semua pembelian selesai, program menampilkan total pembayaran.
+8. Jika memilih 'Keluar':
+   - Program berhenti dan menampilkan pesan terima kasih.
+
+------------------------------------------------------------
+STRUKTUR DATA
+------------------------------------------------------------
+- menu_list (List of Dictionary)
+  Contoh: [{"nama": "Nasi Goreng", "harga": 15000, "kategori": "Makanan"}]
+
+------------------------------------------------------------
+KONSEP PEMROGRAMAN
+------------------------------------------------------------
+- Menggunakan struktur data List dan Dictionary.
+- Belum menggunakan database, data hilang setelah program berhenti.
+- Pemrograman berbasis prosedural
