@@ -40,13 +40,15 @@ WaruMate_Project_v1_to_v5_Final/
 ├── WaruMate_v1/
 │   ├── WaruMate.py
 │   ├── DB_WaruMate.py
+|   ├── logika_flow_WaruMate_v1.txt
 │
 ├── WaruMate_v5/
 │   ├── WaruMate_v5.py
 │   ├── DB_WaruMate_v5_Refined_Full.py
 │   ├── warung.db
+|   ├── logika_flow_WaruMate_v5.txt
 │
-├── Dokumentasi/
+├── Docs/
 │   ├── README.txt
 │   ├── CHANGELOG.md
 │   ├── Versi_ChangeLog.txt
